@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function changeWord(array){
+            let space=" ";
+            let newArr="";
+            for(let i=0;i<array.length;i++){
+                if (array[i]==space){
+                    newArr+=array[i-1].toUpperCase();  
+                    newArr+=array[i];                 
+                }else{
+                    if(array[i+1]!=space){
+                        if(array.length-1==i && array[array.length-1]!=space){
+                            newArr+=array[i].toUpperCase();
+                            break;
+                        }
+                        newArr+=array[i];                      
+                    }               
+                }
+            }
+            return newArr;
+        }
+        var array="le anh quan";
+        console.log(changeWord(array));
+    </script>
+</body>
+</html>

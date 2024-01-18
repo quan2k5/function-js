@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sortArr(string){
+            let text=[];
+            let numbers=[];
+            let res=[];
+            for(let i=0;i<string.length;i++){
+                 if(string[i].match(/[a-zA-Z]/)){
+                    text.push(string[i]);
+                 }else{
+                    if(isNaN(string[i])){
+                        res.push(string[i]);
+                    }else{
+                        numbers.push(string[i]);
+                    }
+                 }
+            }
+            let arr=[];
+            arr=text.concat(numbers).concat(res);
+            return arr;
+        }
+        var string="dsfg133vfdc2@562#@eth22vdfcd";
+        console.log(sortArr(string));
+    </script>   
+</body>
+</html>

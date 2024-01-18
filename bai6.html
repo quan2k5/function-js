@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function checkTriangle(a){
+        let newArr=[];
+        let count=0;
+        for(let i=0;i<a.length-2;i++){
+            newArr.push(a[i]);
+            for(let k=i+1;k<a.lengh-1;k++){
+            newArr.splice(2,1,a[k]);
+            for(let j=i+1;j<a.length;j++){
+                newArr.splice(3,1,a[j]);
+                if(newArr[0]<newArr[1]+newArr[2] &&newArr[0]+newArr[2]>newArr[1]&&newArr[0]+newArr[1]>newArr[2]){
+                    count++;
+                }
+            }
+        }
+            newArr=[];
+        }
+        return count;
+     }
+     var arr=[4, 6, 3, 7, 10, 5, 8, 9];
+     console.log("so tam giac:",checkTriangle(arr));
+    </script>
+</body>
+</html>

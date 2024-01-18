@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findArr(a,number){
+            for(let i=0;i<a.length-1;i++){
+                for(let j=i+1;j<a.length;j++){
+                    if(a[i]>a[j]){
+                        let temp=a[i];
+                        a[i]=a[j];
+                        a[j]=temp;
+                    }
+                }            
+            }
+            let arr=[];
+            for(let i=0;i<a.length-2;i++){
+                var check=false;
+                let left=i+1;
+                let right=a.length-1;
+                while(left<right){
+                    let sum=a[left]+a[right]+a[i];
+                    if(sum<number){
+                        left++;
+                    }else if(sum>number){
+                        right--;
+                    }else{
+                        arr=[a[i],a[left],a[right]];
+                        check=true;
+                        break;                  
+                    }
+                }
+                if(check==true){
+                    break;
+                }       
+            }
+            return arr;          
+        }
+        var array=[1,2,3,4,5,6,7,8];
+        var number=+prompt("nhap vao 1 so bat ky");
+        console.log("mang can tim:",findArr(array,number));
+    </script>
+</body>
+</html>
